@@ -1,0 +1,52 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.lnk
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.bak
+*.orig
+
+# Environment and local secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Dependency and build outputs
+node_modules/
+dist/
+build/
+out/
+coverage/
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+
+# Python / PowerShell artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+env/
+*.ps1xml
+
+# Archives and generated packages
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
