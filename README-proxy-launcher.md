@@ -31,6 +31,14 @@ proxy variables set for that process tree. This launcher keeps its original
 process-local proxy behavior, including `ALL_PROXY`, because it does not write
 user-level environment variables.
 
+The launcher prompts for a proxy profile and asks for confirmation before it
+continues:
+
+```text
+1. FlClash  - http://127.0.0.1:7890
+2. v2rayN   - http://127.0.0.1:10808
+```
+
 ## Script layout
 
 ```text
@@ -45,7 +53,8 @@ double-click convenience.
 
 ## Notes
 
-- Replace `127.0.0.1:7890` with your actual proxy host and port if needed.
+- Replace the built-in FlClash or v2rayN proxy ports with your actual proxy
+  host and port if needed.
 - After enabling or disabling the global proxy, restart VSCode, JetBrains IDEs,
   terminals, and running Codex sessions. Already running programs keep the
   environment variables they started with.

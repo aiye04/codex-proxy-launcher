@@ -2,7 +2,7 @@
 setlocal EnableExtensions EnableDelayedExpansion
 title Codex Global Proxy Session
 
-set "PROXY=http://127.0.0.1:7890"
+set "PROXY=http://127.0.0.1:10808"
 set "NO_PROXY_VALUE=localhost,127.0.0.1,::1"
 set "ENV_KEY=HKCU\Environment"
 

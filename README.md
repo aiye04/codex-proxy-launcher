@@ -44,6 +44,13 @@ NO_PROXY=localhost,127.0.0.1,::1
 launch-codex-with-proxy.cmd
 ```
 
+启动时会先选择代理配置并二次确认：
+
+```text
+1. FlClash  - http://127.0.0.1:7890
+2. v2rayN   - http://127.0.0.1:10808
+```
+
 该脚本只影响当前启动的 Codex 进程树，并会设置：
 
 ```text
@@ -102,7 +109,7 @@ scripts\generic\start-with-proxy.cmd socks5://127.0.0.1:7890 npm install
 http://127.0.0.1:7890
 ```
 
-如果你的代理端口不同，请修改对应脚本里的 `PROXY` 值，或在调用通用脚本时传入新的代理地址。
+Codex 桌面应用启动脚本内置 `FlClash` 和 `v2rayN` 两个选项。如果你的代理端口不同，请修改对应脚本里的 `FLCLASH_PROXY` / `V2RAYN_PROXY` 值，或在调用通用脚本时传入新的代理地址。
 
 ## 注意事项
 
