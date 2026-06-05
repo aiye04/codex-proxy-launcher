@@ -25,11 +25,6 @@ if errorlevel 2 (
 echo.
 echo Selected %PROXY_NAME%:
 echo   %PROXY%
-choice /c YN /n /m "Continue and launch Codex? [Y/N]: "
-if errorlevel 2 (
-  echo.
-  goto choose_proxy
-)
 echo.
 
 for /f "usebackq delims=" %%I in (`powershell -NoProfile -ExecutionPolicy Bypass -Command "$root = Join-Path $env:ProgramFiles 'WindowsApps'; $best = $null; foreach ($dir in Get-ChildItem -LiteralPath $root -Directory -Filter 'OpenAI.Codex_*' -ErrorAction SilentlyContinue) { if ($dir.Name -match '^OpenAI\.Codex_([\d\.]+)_') { $exe = Join-Path $dir.FullName 'app\Codex.exe'; $version = [version]$Matches[1]; if ((Test-Path -LiteralPath $exe) -and (($null -eq $best) -or ($version -gt $best.Version))) { $best = [pscustomobject]@{ Version = $version; Exe = $exe } } } }; if ($best) { $best.Exe }"`) do set "CODEX_EXE=%%I"

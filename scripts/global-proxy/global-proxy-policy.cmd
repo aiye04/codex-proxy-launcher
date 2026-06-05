@@ -1,16 +1,37 @@
 @echo off
 setlocal EnableExtensions EnableDelayedExpansion
-title Codex Global Proxy Session
+title Global Proxy Policy
 
-set "PROXY=http://127.0.0.1:10808"
+set "FLCLASH_PROXY=http://127.0.0.1:7890"
+set "V2RAYN_PROXY=http://127.0.0.1:10808"
 set "NO_PROXY_VALUE=localhost,127.0.0.1,::1"
 set "ENV_KEY=HKCU\Environment"
 
 echo ========================================
-echo Codex Global Proxy Session
+echo Global Proxy Policy
 echo ========================================
 echo.
-echo This window enables the user-level proxy while it stays open.
+echo Select proxy profile:
+echo   1. FlClash  - %FLCLASH_PROXY%
+echo   2. v2rayN   - %V2RAYN_PROXY%
+echo   Q. Quit
+echo.
+choice /c 12Q /n /m "Select [1/2/Q]: "
+if errorlevel 3 exit /b 0
+if errorlevel 2 (
+  set "PROXY_NAME=v2rayN"
+  set "PROXY=%V2RAYN_PROXY%"
+) else (
+  set "PROXY_NAME=FlClash"
+  set "PROXY=%FLCLASH_PROXY%"
+)
+
+echo.
+echo Selected %PROXY_NAME%:
+echo   %PROXY%
+echo.
+echo This window enables user-level proxy variables while it stays open.
+echo Other tools may be affected if they read HTTP_PROXY or HTTPS_PROXY.
 echo Wait until the proxy is enabled, then type OFF and press Enter to disable it.
 echo.
 
